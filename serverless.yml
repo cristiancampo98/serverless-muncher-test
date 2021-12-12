@@ -1,0 +1,73 @@
+service: aws-node-project
+
+frameworkVersion: "2 || 3"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  createUser:
+    handler: src/users/handler.create
+    events:
+      - http:
+          path: users
+          method: post
+  findAllUsers:
+    handler: src/users/handler.findAll
+    events:
+      - http:
+          path: users
+          method: get
+  getUser:
+    handler: src/users/handler.findOne
+    events:
+      - http:
+          path: users/{id}
+          method: post
+  createBalance:
+    handler: src/balance/handler.create
+    events:
+      - http:
+          path: balance
+          method: post
+  findAllBalance:
+    handler: src/balance/handler.findAll
+    events:
+      - http:
+          path: balance
+          method: get
+  getBalanceByUser:
+    handler: src/balance/handler.getBalanceByUser
+    events:
+      - http:
+          path: get-balance-by-user/{userId}
+          method: post
+  createProduct:
+    handler: src/products/handler.create
+    events:
+      - http:
+          path: products
+          method: post
+  findAllProducts:
+    handler: src/products/handler.findAll
+    events:
+      - http:
+          path: products
+          method: get
+  createOrder:
+    handler: src/orders/handler.create
+    events:
+      - http:
+          path: orders
+          method: post
+  findAllOrders:
+    handler: src/orders/handler.findAll
+    events:
+      - http:
+          path: orders
+          method: get
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
