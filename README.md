@@ -16,7 +16,7 @@ _Cuando haya finalizado, ejecuta el comando npx prisma migrate dev (el proyecto 
 
 ### Servidor
 
-\_El proyecto usa el plugin serverless offline y para lanzarlo debes ejecutar el comando serverless offline start. La consola te mostrará las rutas que existen en el proyecto
+\_El proyecto usa el plugin serverless offline y para lanzarlo debes ejecutar el comando serverless offline start. La consola te mostrará las rutas que existen en el proyecto. Además podras encontrar el archivo rest de insomnia llamado Insomnia_2021-12-12.json para ser importado en tu aplicación de insomnia y realizar las pruebas
 
 ## Construido con 🛠️
 
